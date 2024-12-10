@@ -4,74 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ju-Sheng Hong</title>
-    <!-- Link to Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Add Bootstrap for layout and Font Awesome for icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
             line-height: 1.6;
-            margin: 20px;
-            color: #333;
         }
-        h1, h2, h3 {
-            font-weight: 700;
-            color: #222;
+        .header {
+            text-align: center;
+            margin: 40px 0;
         }
-        .links a {
-            margin-right: 15px;
+        .header img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .tabs {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .tabs a {
+            margin: 0 15px;
             text-decoration: none;
-            color: #0066cc;
+            color: #007bff;
+            font-weight: bold;
         }
-        .links a:hover {
+        .tabs a:hover {
             text-decoration: underline;
+        }
+        h2 {
+            margin-top: 30px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .publication img {
+            max-width: 100%;
+            height: auto;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: #f9f9f9;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header Section -->
-        <header class="text-center">
+        <!-- Header -->
+        <div class="header">
+            <img src="profile.jpg" alt="Your Profile">
             <h1>Ju-Sheng Hong</h1>
-            <h3>Ph.D. in Statistics</h3>
-            <div class="links">
-                <a href="mailto:jsdhong@ucdavis.edu">Email</a>
-                <a href="https://www.linkedin.com/in/ju-sheng-hong-1b0081174/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/jshong071" target="_blank">GitHub</a>
-                <a href="https://scholar.google.com/citations?user=GkWLjeoAAAAJ&hl=zh-TW&authuser=1" target="_blank">Google Scholar</a>
-            </div>
-        </header>
+            <h3>Ph.D. in Statistics | University of California, Davis</h3>
+            <p>
+                <a href="mailto:jsdhong@ucdavis.com"><i class="fas fa-envelope"></i> Email</a> |
+                <a href="https://linkedin.com/in/ju-sheng-hong-1b0081174/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> |
+                <a href="https://github.com/jshong071" target="_blank"><i class="fab fa-github"></i> GitHub</a> |
+                <a href="https://scholar.google.com/citations?user=GkWLjeoAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+            </p>
+        </div>
 
         <!-- Bio Section -->
-        <section class="section">
+        <section id="bio">
             <h2>Bio</h2>
             <p>
-                I am a Ph.D. candidate in Statistics at UC Davis, specializing in machine learning for functional data analysis, time series, and deep learning. I am passionate about building innovative solutions to complex problems, as showcased in my recent NeurIPS 2024 paper.
+                I am a Ph.D. candidate in Statistics at UC Davis, where I am advised by Dr. Jane-Ling Wang. 
+                I received my Bachelor’s degree in Mathematics with a Dean’s Award from National Taiwan University.
+            </p>
+            <p>
+                My research interests include conformal inference, deep learning theory, and its applications to functional data using transformers or traditional deep neural networks. 
+                I am actively seeking internship opportunities for Summer 2025.
             </p>
         </section>
 
-        <!-- Research Section -->
-        <section class="section">
-            <h2>Research</h2>
-            <ul>
-                <li>
-                    <strong>UniMTS: Unified Pre-training for Motion Time Series</strong>  
-                    <em>NeurIPS 2024</em>  
-                    Summary: Pre-training techniques for motion time series with practical applications in healthcare and climate science.
-                </li>
-            </ul>
-        </section>
+        <!-- Research/Publications Section -->
+        <section id="publications">
+            <h2>Research/Publications</h2>
 
-        <!-- Skills Section -->
-        <section class="section">
-            <h2>Skills</h2>
-            <p>Python, PyTorch, R, CUDA, Functional Data Analysis, Time Series Modeling, Deep Learning</p>
+            <!-- Paper 1: SAND -->
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="SAND_pipeline.jpeg" alt="SAND Pipeline" style="max-width:100%; height:auto;">
+                </div>
+                <div class="col-md-8">
+                    <h4>SAND: Smooth Imputation of Sparse and Noisy Functional Data with Transformer Networks</h4>
+                    <p><strong>Authors:</strong> Ju-Sheng Hong, Junwen Yao, Jonas Mueller, Jane-Ling Wang</p>
+                    <p><strong>Conference:</strong> The Thirty-eighth Annual Conference on Neural Information Processing Systems (NeurIPS 2024)</p>
+                    <p><strong>Summary:</strong> SAND enhances transformer models for functional data imputation by introducing a Self-Attention on Derivatives (SAND) module. This ensures smooth imputations without requiring assumptions about the data distribution. Theoretical guarantees and empirical results demonstrate SAND's superior performance compared to traditional and existing neural methods.</p>
+                    <p>
+                        <a href="https://openreview.net/pdf?id=MXRO5kukST" target="_blank">Paper PDF</a> | 
+                        <a href="https://github.com/jshong071/SAND" target="_blank">Code Repository</a> | 
+                        <a href="SAND_Slides.pdf" target="_blank">Slides</a> | 
+                        <a href="poster_keynotes.pdf" target="_blank">Poster</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <hr>
+
+            <!-- Paper 2: Model-based Hypothesis Tests -->
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Model-based Hypothesis Tests for the Causal Mediation of Semi-Competing Risks</h4>
+                    <p><strong>Authors:</strong> Yun-Lin Ho, Ju-Sheng Hong, Yen-Tsung Huang</p>
+                    <p><strong>Journal:</strong> Lifetime Data Analysis, Vol. 30, Issue 1, Pages 119-142 (Springer US, January 2024)</p>
+                    <p><strong>Summary:</strong> This paper addresses the causal mediation of semi-competing risks, where an intermediate event may be censored by a primary event but not vice versa. It introduces model-based hypothesis tests, including an intersection-union test (IUT) and a weighted log-rank test (WLR), under the counterfactual outcome framework. These methods decompose the effect of an exposure into direct and indirect effects, ensuring proper adjustment for confounders. The tests demonstrated significant results in analyzing the mediation effects of hepatitis B/C on liver cancer risk through liver cirrhosis incidence.</p>
+                    <p>
+                        <a href="https://link.springer.com/article/10.1007/s10985-023-09595-7" target="_blank">Journal Article</a>
+                    </p>
+                </div>
+            </div>
         </section>
 
         <!-- Footer -->
-        <footer class="text-center">
+        <div class="footer">
             <p>&copy; 2024 Ju-Sheng Hong</p>
-        </footer>
+        </div>
     </div>
 </body>
 </html>
